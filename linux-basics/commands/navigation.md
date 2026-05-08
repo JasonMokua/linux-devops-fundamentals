@@ -12,3 +12,28 @@ Shows the full path of the directory you are currently in.
 
 ```bash
 pwd
+```
+
+## 2. ls (List Files)
+
+Shows all the folders and files of the directory you are currently in.
+
+```bash
+ls
+```
+
+## 3. cd (Change Directory)
+
+Change the directory you are currently in.
+
+```bash
+cd
+```
+
+## 3. tree
+
+Recurivsely list the contents of a folder.
+
+```bash
+tree
+```
