@@ -90,8 +90,72 @@ tail
 
 ## 12. nano
 
-this is a basic text file editor 
+this is a basic text editor 
 
 ```bash
 nano 
+```
+
+
+## 13. vim
+
+this is an advanced text editor 
+
+```bash
+vim 
+```
+
+## 14. grep
+
+this command finds the text patterns inside a file.
+
+```bash
+grep
+```
+
+## 15. grep
+
+this command finds the text patterns inside a file.
+
+```bash
+grep
+```
+
+## 15. sort
+
+this command arrganges lines in a file
+
+```bash
+sort
+```
+
+## 16. uniq
+
+this command removes deuplicate lines in a file
+
+```bash
+uniq
+```
+
+## 17. wc
+
+this command counts the number of lines or characters in a file
+
+```bash
+wc
+```
+## 18. cut
+
+this command is used to extract columns or characters from a file
+
+```bash
+cut
+```
+
+## 19. awk
+
+this powerful text-search command that is used to extract columns from a file
+
+```bash
+awk
 ```
