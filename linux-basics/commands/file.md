@@ -126,8 +126,6 @@ Force remove without confirmation:
 rm -rf myfolder
 ```
 
-> ⚠️ Be careful when using `rm -rf` because deleted files cannot be easily recovered.
-
 ---
 
 # File Searching & Viewing
