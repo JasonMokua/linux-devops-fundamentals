@@ -30,7 +30,7 @@ Change the directory you are currently in.
 cd
 ```
 
-## 3. tree
+## 4. tree
 
 Recurivsely list the contents of a folder.
 
