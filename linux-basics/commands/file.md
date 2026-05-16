@@ -1,161 +1,363 @@
-# Linux File Commands
+# Linux File & Directory Commands
 
-This file covers basic Linux file & folder commands.
+This guide covers essential Linux commands used for creating, managing, searching, and editing files and directories.
 
-These are essential commands for working with any Linux file.
+These commands are commonly used in Linux system administration, development, and everyday terminal workflows.
 
 ---
 
-## 1. touch
+# File & Directory Management
 
-This is used to create a file.
+## 1. `touch`
 
-```bash
-touch
-```
-
-## 2. mkdir
-
-This is used to create a folder.
+Creates a new empty file.
 
 ```bash
-mkdir
+touch filename.txt
 ```
 
-## 3. rmdir
-
-This command is used to remove an empty directory.
+Example:
 
 ```bash
-rmdir
+touch notes.txt
 ```
 
-## 4. cp
+---
 
-This is used to copy a file.
+## 2. `mkdir`
+
+Creates a new directory (folder).
 
 ```bash
-cp
+mkdir directory_name
 ```
 
-## 5. mv
-
-This is used to rename a file or move a file.
+Example:
 
 ```bash
-mv
+mkdir projects
 ```
 
-## 6. rm
+---
 
-This is used to remove a file or folder.
+## 3. `rmdir`
+
+Removes an empty directory.
 
 ```bash
-rm
+rmdir directory_name
 ```
 
-## 7. find
-
-This is used to search for files or folders
+Example:
 
 ```bash
-find
+rmdir old_folder
 ```
 
+---
 
-## 9. less
+## 4. `cp`
 
-This is used to scroll a file
+Copies files or directories.
 
 ```bash
-less
+cp source destination
 ```
 
-
-## 10. head
-
-This is used to show the first 10 lines of a file
+Example:
 
 ```bash
-head
+cp file.txt backup.txt
 ```
 
-## 11. tail
-
-This is used to show the last 10 lines of a file
+Copy a directory recursively:
 
 ```bash
-tail
+cp -r myfolder backup_folder
 ```
 
-## 12. nano
+---
 
-this is a basic text editor 
+## 5. `mv`
+
+Moves or renames files and directories.
 
 ```bash
-nano 
+mv source destination
 ```
 
-
-## 13. vim
-
-this is an advanced text editor 
+Rename a file:
 
 ```bash
-vim 
+mv old.txt new.txt
 ```
 
-## 14. grep
-
-this command finds the text patterns inside a file.
+Move a file to another directory:
 
 ```bash
-grep
+mv file.txt /home/user/Documents
 ```
 
-## 15. grep
+---
 
-this command finds the text patterns inside a file.
+## 6. `rm`
+
+Removes files or directories.
 
 ```bash
-grep
+rm filename
 ```
 
-## 15. sort
-
-this command arrganges lines in a file
+Example:
 
 ```bash
-sort
+rm notes.txt
 ```
 
-## 16. uniq
-
-this command removes deuplicate lines in a file
+Remove a directory recursively:
 
 ```bash
-uniq
+rm -r myfolder
 ```
 
-## 17. wc
-
-this command counts the number of lines or characters in a file
+Force remove without confirmation:
 
 ```bash
-wc
+rm -rf myfolder
 ```
-## 18. cut
 
-this command is used to extract columns or characters from a file
+> ⚠️ Be careful when using `rm -rf` because deleted files cannot be easily recovered.
+
+---
+
+# File Searching & Viewing
+
+## 7. `find`
+
+Searches for files and directories.
 
 ```bash
-cut
+find [path] [options] [expression]
 ```
 
-## 19. awk
-
-this powerful text-search command that is used to extract columns from a file
+Example:
 
 ```bash
-awk
+find . -name "file.txt"
 ```
+
+---
+
+## 8. `less`
+
+Views file contents one page at a time.
+
+```bash
+less filename
+```
+
+Example:
+
+```bash
+less log.txt
+```
+
+---
+
+## 9. `head`
+
+Displays the first 10 lines of a file by default.
+
+```bash
+head filename
+```
+
+Example:
+
+```bash
+head data.txt
+```
+
+Show the first 20 lines:
+
+```bash
+head -20 data.txt
+```
+
+---
+
+## 10. `tail`
+
+Displays the last 10 lines of a file by default.
+
+```bash
+tail filename
+```
+
+Example:
+
+```bash
+tail log.txt
+```
+
+Monitor a file in real time:
+
+```bash
+tail -f log.txt
+```
+
+---
+
+# Text Editors
+
+## 11. `nano`
+
+A simple and beginner-friendly terminal text editor.
+
+```bash
+nano filename
+```
+
+Example:
+
+```bash
+nano notes.txt
+```
+
+---
+
+## 12. `vim`
+
+A powerful and advanced terminal text editor.
+
+```bash
+vim filename
+```
+
+Example:
+
+```bash
+vim script.sh
+```
+
+---
+
+# Text Processing Commands
+
+## 13. `grep`
+
+Searches for text patterns inside files.
+
+```bash
+grep "pattern" filename
+```
+
+Example:
+
+```bash
+grep "error" log.txt
+```
+
+Case-insensitive search:
+
+```bash
+grep -i "error" log.txt
+```
+
+---
+
+## 14. `sort`
+
+Sorts lines in a file alphabetically or numerically.
+
+```bash
+sort filename
+```
+
+Example:
+
+```bash
+sort names.txt
+```
+
+---
+
+## 15. `uniq`
+
+Removes duplicate adjacent lines from sorted input.
+
+```bash
+uniq filename
+```
+
+Example:
+
+```bash
+uniq names.txt
+```
+
+Commonly used with `sort`:
+
+```bash
+sort names.txt | uniq
+```
+
+---
+
+## 16. `wc`
+
+Counts lines, words, and characters in a file.
+
+```bash
+wc filename
+```
+
+Example:
+
+```bash
+wc notes.txt
+```
+
+Count only lines:
+
+```bash
+wc -l notes.txt
+```
+
+---
+
+## 17. `cut`
+
+Extracts specific columns or characters from a file.
+
+```bash
+cut [options] filename
+```
+
+Example:
+
+```bash
+cut -d "," -f1 data.csv
+```
+
+---
+
+## 18. `awk`
+
+A powerful text-processing tool used for pattern scanning and data extraction.
+
+```bash
+awk 'pattern {action}' filename
+```
+
+Example:
+
+```bash
+awk '{print $1}' data.txt
+```
+
+---
+
+# Summary
+
+These Linux commands form the foundation of file and text management in the terminal. Mastering them will improve your efficiency when working with Linux systems, shell scripting, and server administration.
